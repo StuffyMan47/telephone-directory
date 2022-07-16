@@ -20,7 +20,7 @@ namespace Spravochnik
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Koldun_210")
+            if (textBox1.Text == "Koldun_21")
             {
                 switch (authorizationValue)
                 {
