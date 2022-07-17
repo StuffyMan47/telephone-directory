@@ -33,10 +33,17 @@ namespace Spravochnik
             string Position = textBox5.Text;
             string Namber = textBox6.Text;
             string Mail = textBox7.Text;
-            string query = "INSERT INTO table_name ([Код сотрудника], Фамилия, Имя, Отчество, Должность, ВН, ГорН) VALUES (" + kod + ",'" + Sruname + "','" + Name + "','" + Othcestvo + "','" + Position + "','" + Namber + "','" + Mail + "' )";
-            OleDbCommand command = new OleDbCommand(query, myConnection);
-            command.ExecuteNonQuery();
-            MessageBox.Show("Контакт добавлен!", "Внимание!");
+            if (Sruname !="" && Name != "" && Othcestvo != "" && Position != "" && Namber != "" && Mail != "")
+            {
+                string query = "INSERT INTO table_name ([Код сотрудника], Фамилия, Имя, Отчество, Должность, ВН, ГорН) VALUES (" + kod + ",'" + Sruname + "','" + Name + "','" + Othcestvo + "','" + Position + "','" + Namber + "','" + Mail + "' )";
+                OleDbCommand command = new OleDbCommand(query, myConnection);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Контакт добавлен!", "Внимание!");
+            }
+            else
+            {
+                MessageBox.Show("Заполните все поля!", "Внимание!");
+            }
         }
 
         private void Form2_KeyDown(object sender, KeyEventArgs e)
